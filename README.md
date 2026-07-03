@@ -1,8 +1,17 @@
-# DE BUILD Assessment — [Candidate Name]
+# DE BUILD Assessment
+
+## About This Repository
+
+This repository contains **two independent submissions** for the same BUILD assessment — a production-grade data engineering solution for a financial trading platform.
+
+| Submission | Folder | Approach |
+|---|---|---|
+| **Human-guided** | Root (`/`) | Completed through iterative AI collaboration — candidate reasoned through each architecture decision, challenged options, and directed the solution. All prompts logged in `PROMPTS.md`. |
+| **Automode** | `automode/` | Completed by AI operating autonomously with minimal human direction. Included for comparison. |
 
 ## Overview
 
-This repository contains a production-grade data engineering solution for a financial trading platform. The platform ingests deposits from a new payment processor vendor (3 daily CSV files with intentional anomalies), processes a CDC stream of client profile changes (JSONL), and joins against 4 existing warehouse tables (`client_signup`, `client_profile`, `client_deposit`, `client_trades`). The solution covers pipeline design, data quality, dimensional modelling, scalability diagnosis, and real-time fraud architecture.
+The assessment covers: vendor deposit ingestion (3 daily CSV files with intentional anomalies), CDC stream processing (client profile JSONL), dimensional modelling over 4 existing warehouse tables, scalability diagnosis of a 47-min SLA breach, and real-time fraud architecture.
 
 ## Repo Structure
 
@@ -16,7 +25,15 @@ This repository contains a production-grade data engineering solution for a fina
 │   └── query_a_deposit_count_by_country.sql
 ├── code/
 │   └── pipeline.py         — Runnable idempotent prototype
-└── PROMPTS.md              — All AI prompts used, grouped by section
+├── PROMPTS.md              — All AI prompts used, grouped by section
+└── automode/               — Automode submission (same structure)
+    ├── part1_pipeline.md
+    ├── part2_data_model.md
+    ├── part3_diagnosis.md
+    ├── part4_architecture.md
+    ├── sql/
+    ├── code/
+    └── PROMPTS.md
 ```
 
 ## Key Design Decisions
