@@ -1,0 +1,3 @@
+# No external dependencies.
+# All modules used (sqlite3, hashlib, json, csv, os, sys, datetime) are Python stdlib.
+# Requires Python 3.10+ (uses list[int] type hint syntax).
